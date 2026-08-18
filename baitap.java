@@ -16,12 +16,13 @@ public class baitap {
 
             Numbers.add(number);
         }
-        System.out.println("Enter first: ");
-        int start = scanner.nextInt();
-        System.out.println("Enter end: ");
-        int end = scanner.nextInt();
-        for (int i = start; i<=end;i++) {
-            System.out.println(Numbers.get(i));
-        }
+        int sum = 0;
+       for (int i =0 ;i <Numbers.size();i++) {
+        sum = sum+Numbers.get(i);      
+       }
+       double average = (double) sum / Numbers.size();
+       System.out.println("Sum: " + sum);
+       scanner.close();
+
     }
-}
+    }
