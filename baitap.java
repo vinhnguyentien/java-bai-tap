@@ -1,70 +1,27 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class baitap {
-
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your number: ");
+        ArrayList<Integer> Numbers = new ArrayList<>();
 
-        // Test printSpaces
-        printSpaces(4);
-        System.out.println("");
+        while (true) {
+        int number = scanner.nextInt();
 
-        // Test right-leaning triangle
-        printTriangle(4);
+            if (number==-1) {
+                break;
+            }
 
-        // Test Christmas tree
-        christmasTree(10);
-    }
-
-    // Phần 1: In ra số khoảng trắng
-    public static void printSpaces(int number) {
-        int i = 0;
-
-        while (i < number) {
-            System.out.print(" ");
-            i++;
+            Numbers.add(number);
         }
-    }
-
-    // Phần 2: Tam giác lệch phải
-    public static void printTriangle(int size) {
-        int i = 1;
-
-        while (i <= size) {
-            printSpaces(size - i);
-            printStars(i);
-            i++;
-        }
-    }
-
-    // Phần hỗ trợ: In số dấu *
-    public static void printStars(int number) {
-        int i = 0;
-
-        while (i < number) {
-            System.out.print("*");
-            i++;
-        }
-
-        System.out.println("");
-    }
-
-    // Phần 3: Cây thông Noel
-    public static void christmasTree(int height) {
-
-        // Phần tam giác
-        int i = 1;
-
-        while (i <= height) {
-            printSpaces(height - i);
-            printStars(i + i - 1);
-            i++;
-        }
-
-        // Phần thân cây
-        i = 0;
-
-        while (i < 2) {
-            printSpaces(height - 1);
-            printStars(3);
-            i++;
+        System.out.println("Enter first: ");
+        int start = scanner.nextInt();
+        System.out.println("Enter end: ");
+        int end = scanner.nextInt();
+        for (int i = start; i<=end;i++) {
+            System.out.println(Numbers.get(i));
         }
     }
 }
